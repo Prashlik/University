@@ -1,0 +1,11 @@
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\bin\Debug\LabWork1.exe.config
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\bin\Debug\LabWork1.exe
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\bin\Debug\LabWork1.pdb
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.csproj.AssemblyReference.cache
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.csproj.SuggestedBindingRedirects.cache
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.Form1.resources
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.Properties.Resources.resources
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.csproj.GenerateResource.cache
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.csproj.CoreCompileInputs.cache
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.exe
+C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork1\LabWork1\obj\Debug\LabWork1.pdb
