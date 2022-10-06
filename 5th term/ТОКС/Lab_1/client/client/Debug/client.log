@@ -1,0 +1,6 @@
+﻿  Source.cpp
+D:\Visual Studio\5\TOKS\client\client\Source.cpp(6,9): warning C4101: size: неиспользованная локальная переменная
+  func.cpp
+D:\Visual Studio\5\TOKS\client\client\func.cpp(25,11): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  client.vcxproj -> D:\Visual Studio\5\TOKS\client\Debug\client.exe

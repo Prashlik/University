@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Computer">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEFAAAAAAACAAABEAAAAAAAAAAEABABFABAQAAABAA=</HashCode>
+      <FileName>Computer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Portative">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gRABAAEAAAAAAACAAAAAAAQAEAAAAAIAAEAIAAQAAAA=</HashCode>
+      <FileName>Portative.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Desctop">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAEAAAIAAAAAAAAAAAgEAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Desctop.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Laptop">
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAQAAQAAAABAAAABAAQAAAAAAA=</HashCode>
+      <FileName>Laptop.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Smartphone">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAIAAAQAAAAiBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Smartphone.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SysBlock">
+    <Position X="1.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAACAQQAAAAAAAAIAIAAgARAAAhAAAAAAAAAEA=</HashCode>
+      <FileName>SysBlock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monoblock">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAQAAAADAAAAAEAAAAQAAAA=</HashCode>
+      <FileName>Monoblock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

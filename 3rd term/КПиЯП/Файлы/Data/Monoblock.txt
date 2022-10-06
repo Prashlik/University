@@ -1,0 +1,4 @@
+
+     Brand  1988          Compp       250 150  19
+  KovBrand  2010       LuCi2000     10000 150  16
+   PovSell  2020        MiniMax      4999 340  18
