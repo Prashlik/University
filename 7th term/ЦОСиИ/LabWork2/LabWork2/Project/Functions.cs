@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace LabWork2
 {
-    public class Functions
+    internal class Functions
     {
-        public static Image resizeImage(Image imgToResize, Size size)
+        public static Image ResizeImage(Image imgToResize, Size size)
         {
             float ratW = (float)size.Width / imgToResize.Width;
             float ratH = (float)size.Height / imgToResize.Height;
@@ -21,8 +21,7 @@ namespace LabWork2
 
             return (Image)(new Bitmap(imgToResize, size));
         }
-
-        public static void drawGraph(Bitmap bmp, PictureBox graph)
+        public static void DrawGraph(Bitmap bmp, PictureBox graph)
         {
             int[] hist = new int[256];
             int a;
@@ -44,8 +43,7 @@ namespace LabWork2
             for (int i = 0; i < 256; i++)
                 g.DrawLine(pen, step * (i + 1), height - (float)hist[i] * mult, step * (i + 1), height - 1);
         }
-
-        public static Bitmap transformImage(Bitmap bmp, int c)
+        public static Bitmap TransformImage(Bitmap bmp, int c)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -77,8 +75,7 @@ namespace LabWork2
 
             return resBmp;
         }
-
-        public static Bitmap filter(Bitmap bmp, int[,] mtrx, int c)
+        public static Bitmap Filter(Bitmap bmp, int[,] mtrx, int c)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -108,8 +105,7 @@ namespace LabWork2
 
             return bmp;
         }
-
-        public static Bitmap toBinary(Bitmap bmp, int min, int max)
+        public static Bitmap ToBinary(Bitmap bmp, int min, int max)
         {
             Bitmap res = new Bitmap(bmp.Width, bmp.Height);
 
@@ -125,6 +121,41 @@ namespace LabWork2
                 }
 
             return res;
+        }
+        public static List<ImageObject> Division(List<Point> points)
+        {
+            List<ImageObject> objects = new List<ImageObject>();
+            List<Point> temp = new List<Point>();
+
+            while (points.Count != 0)
+            {
+                temp.Clear();
+                Tuple<List<Point>, List<Point>> tup = FindNeigh(temp, points, points[0]);
+                objects.Add(new ImageObject(tup.Item1));
+                points = tup.Item2;
+            }
+
+            return objects;
+        }
+        public static Tuple<List<Point>, List<Point>> FindNeigh(List<Point> temp, List<Point> points, Point point)
+        {
+            temp.Add(point);
+            points.Remove(point);
+            for (int y = -1; y < 2; y++)
+                for (int x = -1; x < 2; x++)
+                {
+                    if (x == 0 && y == 0) continue;
+                    Point p = new Point((point.X + x), (point.Y + y));
+                    if (points.Contains(p))
+                    {
+                        Tuple<List<Point>, List<Point>> tup = FindNeigh(temp, points, p);
+                        temp = tup.Item1;
+                        points = tup.Item2;
+                    }
+
+
+                }
+            return Tuple.Create(temp, points);
         }
     }
 }

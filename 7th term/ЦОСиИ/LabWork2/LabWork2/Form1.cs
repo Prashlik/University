@@ -29,14 +29,14 @@ namespace LabWork2
 
             string filename = ofd.FileName;
             img = Image.FromFile(ofd.FileName);
-            Image newImage = Functions.resizeImage(img, Photo.Size);
+            Image newImage = Functions.ResizeImage(img, Photo.Size);
 
             Result.BackgroundImage = null;
             Graph2.Image = null;
 
             Photo.BackgroundImage = newImage;
 
-            Functions.drawGraph((Bitmap)img, Graph1);
+            Functions.DrawGraph((Bitmap)img, Graph1);
         }
 
         private void transform_Click(object sender, EventArgs e)
@@ -47,11 +47,11 @@ namespace LabWork2
                 return;
             }
 
-            Bitmap resBmp = Functions.transformImage((Bitmap)img, trackBar1.Value);
+            Bitmap resBmp = Functions.TransformImage((Bitmap)img, trackBar1.Value);
             res = (Image)resBmp;
-            Image newImage = Functions.resizeImage((Image)resBmp, Result.Size);
+            Image newImage = Functions.ResizeImage((Image)resBmp, Result.Size);
             Result.BackgroundImage = newImage;
-            Functions.drawGraph(resBmp, Graph2);
+            Functions.DrawGraph(resBmp, Graph2);
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -80,12 +80,12 @@ namespace LabWork2
                 return;
             }
 
-            Bitmap resBmp = Functions.toBinary((Bitmap)res, trackBar2.Value, trackBar3.Value);
-            List<POINT> points = new List<POINT>();
+            Bitmap resBmp = Functions.ToBinary((Bitmap)res, trackBar2.Value, trackBar3.Value);
+            List<Point> points = new List<Point>();
             for (int i = 0; i < resBmp.Width; i++)
                 for (int j = 0; j < resBmp.Height; j++)
                     if (resBmp.GetPixel(i, j).GetBrightness() == 1)
-                        points.Add(new POINT(i, j));
+                        points.Add(new Point(i, j));
 
             int k = (int)numericUpDown1.Value;
             Cluster[] cluster = new Cluster[k];
@@ -107,7 +107,7 @@ namespace LabWork2
             res = (Image)resBmp;
             //Image newImage = Functions.resizeImage((Image)resBmp, Result.Size);
             //Result.BackgroundImage = newImage;
-            Functions.drawGraph(resBmp, Graph2);
+            Functions.DrawGraph(resBmp, Graph2);
         }
 
         private void save_Click(object sender, EventArgs e)

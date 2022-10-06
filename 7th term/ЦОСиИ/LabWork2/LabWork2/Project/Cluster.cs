@@ -11,30 +11,21 @@ using System.Collections;
 
 namespace LabWork2
 {
-	struct POINT
-	{ 
-		public int x, y;
-		public POINT(int x, int y)
-		{
-			this.x = x;
-			this.y = y;
-		} 
-	}
 	class Cluster
 	{
-		List<POINT> scores = new List<POINT>();
+		List<Point> scores = new List<Point>();
 		public int curX, curY;//координаты текущего центроида
 		public int lastX, lastY;//координаты предыдущего центоида
 		public int Size() { return scores.Count(); }//получаем размер списка
-		void Add(POINT pt) { scores.Add(pt); }//Добавляем пиксель к кластеру
+		void Add(Point pt) { scores.Add(pt); }//Добавляем пиксель к кластеру
 		void SetCenter()
 		{
 			int sumX = 0, sumY = 0;
 			int i = 0;
 			int size = Size();
-			for (; i < size; sumX += scores[i].x, i++) ;//the centers of mass by x
+			for (; i < size; sumX += scores[i].X, i++) ;//the centers of mass by x
 			i = 0;
-			for (; i < size; sumY += scores[i].y, i++) ;//the centers of mass by y
+			for (; i < size; sumY += scores[i].Y, i++) ;//the centers of mass by y
 			lastX = curX;
 			lastY = curY;
 			curX = sumX / size;
@@ -44,7 +35,7 @@ namespace LabWork2
 		{
 			scores.Clear();
 		}
-		static Cluster[] Bind(int k, Cluster[] clusarr, List<POINT> vpt)
+		static Cluster[] Bind(int k, Cluster[] clusarr, List<Point> vpt)
 		{
 			for (int j = 0; j < k; j++)
 				clusarr[j].Clear();// Чистим кластер перед использованием
@@ -52,13 +43,13 @@ namespace LabWork2
 			for (int i = 0; i < size; i++)
 			{// Запускаем цикл по всем пикселям множества
 				int min = (int)Math.Sqrt(
-					Math.Pow((float)clusarr[0].curX - vpt[i].x, 2) + Math.Pow((float)clusarr[0].curY - vpt[i].y, 2)
+					Math.Pow((float)clusarr[0].curX - vpt[i].X, 2) + Math.Pow((float)clusarr[0].curY - vpt[i].Y, 2)
 					);
 				Cluster cl = clusarr[0];
 				for (int j = 1; j < k; j++)
 				{
 					int tmp = (int)Math.Sqrt(
-						Math.Pow((float)clusarr[j].curX - vpt[i].x, 2) + Math.Pow((float)clusarr[j].curY - vpt[i].y, 2)
+						Math.Pow((float)clusarr[j].curX - vpt[i].X, 2) + Math.Pow((float)clusarr[j].curY - vpt[i].Y, 2)
 						);
 					if (min > tmp) { min = tmp; cl = clusarr[j]; }// Ищем близлежащий кластер
 				}
@@ -66,7 +57,7 @@ namespace LabWork2
 			}
 			return clusarr;
 		}
-		static void InitialCenter(int k, Cluster[] clusarr, List<POINT> vpt)
+		static void InitialCenter(int k, Cluster[] clusarr, List<Point> vpt)
 		{
 
 			int size = vpt.Count();
@@ -75,11 +66,11 @@ namespace LabWork2
 
 			for (int i = 0; i < k; i++, steper += step)
 			{
-				clusarr[i].curX = vpt[steper].x;
-				clusarr[i].curY = vpt[steper].y;
+				clusarr[i].curX = vpt[steper].X;
+				clusarr[i].curY = vpt[steper].Y;
 			}
 		}
-		public static void Start(int k, Cluster[] clusarr, List<POINT> vpt)
+		public static void Start(int k, Cluster[] clusarr, List<Point> vpt)
 		{
 			InitialCenter(k, clusarr, vpt);
 			for (; ; )
@@ -94,6 +85,6 @@ namespace LabWork2
 				if (chk == k) return;//Если да выходим с цикла
 			}
 		}
-		List<POINT> at(int i) { return scores; }//Доступ  к элементам вектора
+		List<Point> at(int i) { return scores; }//Доступ  к элементам вектора
 	};
 }
