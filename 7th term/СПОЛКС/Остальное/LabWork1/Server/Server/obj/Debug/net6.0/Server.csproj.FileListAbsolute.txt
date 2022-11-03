@@ -1,0 +1,15 @@
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.csproj.AssemblyReference.cache
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\bin\Debug\net6.0\Server.exe
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\bin\Debug\net6.0\Server.deps.json
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\bin\Debug\net6.0\Server.runtimeconfig.json
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\bin\Debug\net6.0\Server.dll
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\bin\Debug\net6.0\Server.pdb
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.dll
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\refint\Server.dll
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.pdb
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\Server.genruntimeconfig.cache
+D:\МОЁ\University\7th term\СПОЛКС\LabWork1\Server\Server\obj\Debug\net6.0\ref\Server.dll
