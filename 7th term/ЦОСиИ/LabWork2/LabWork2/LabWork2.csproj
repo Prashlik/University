@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Project\Cluster.cs" />
-    <Compile Include="Project\Functions.cs" />
-    <Compile Include="Project\Colors.cs" />
+    <Compile Include="Cluster.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Colors.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Project\Object.cs" />
-    <Compile Include="Project\Program.cs" />
+    <Compile Include="ImageObject.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -9,3 +9,14 @@ C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabW
 C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork2\LabWork2\bin\Debug\LabWork2.pdb
 C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.exe
 C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.pdb
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\bin\Debug\LabWork2.exe.config
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\bin\Debug\LabWork2.exe
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\bin\Debug\LabWork2.pdb
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.AssemblyReference.cache
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.SuggestedBindingRedirects.cache
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.Form1.resources
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.Properties.Resources.resources
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.GenerateResource.cache
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.CoreCompileInputs.cache
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.exe
+D:\МОЁ\University\7th term\ЦОСиИ\LabWork2\LabWork2\obj\Debug\LabWork2.pdb
