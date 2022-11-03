@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\syaka\\OneDrive\\Рабочий стол\\7 семестр\\МОД\\LabWork1\\LabWork1\\LabWork1\\LabWork1.csproj",
+      "projectUniqueName": "D:\\МОЁ\\University\\7th term\\МОД\\LabWork1\\LabWork1\\LabWork1\\LabWork1.csproj",
       "projectName": "LabWork1",
-      "projectPath": "C:\\Users\\syaka\\OneDrive\\Рабочий стол\\7 семестр\\МОД\\LabWork1\\LabWork1\\LabWork1\\LabWork1.csproj",
+      "projectPath": "D:\\МОЁ\\University\\7th term\\МОД\\LabWork1\\LabWork1\\LabWork1\\LabWork1.csproj",
       "packagesPath": "C:\\Users\\syaka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\syaka\\OneDrive\\Рабочий стол\\7 семестр\\МОД\\LabWork1\\LabWork1\\LabWork1\\obj\\",
+      "outputPath": "D:\\МОЁ\\University\\7th term\\МОД\\LabWork1\\LabWork1\\LabWork1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Visual Studio\\NuGetPackages"
