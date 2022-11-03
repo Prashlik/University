@@ -1,4 +1,0 @@
-﻿  Source.cpp
-C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\МОД\LabWork1\Project1\Project1\Source.cpp(37,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\МОД\LabWork1\Project1\Project1\Source.cpp(46,9): error C2374: imin: переопределение; множественная инициализация
-C:\Users\syaka\OneDrive\Рабочий стол\7 семестр\МОД\LabWork1\Project1\Project1\Source.cpp(12): message : см. объявление "imin"
