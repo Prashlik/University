@@ -50,13 +50,6 @@ namespace LabWork4
 
         private double[] Activate(double[] values)
         {
-            //for (int i = 0; i < values.Length; i++)
-            //{
-            //    if (values[i] < 0)
-            //        values[i] *= 0.01;
-            //    else if (values[i] > 1)
-            //        values[i] = 1d + 0.01 * (values[i] - 1);
-            //}
             double[] result = new double[values.Length];
             for (int i = 0; i < values.Length; i++)
             {
@@ -69,10 +62,6 @@ namespace LabWork4
         private double ActivateDer(double value)
         {
             double result;
-            //if (value < 0 || value > 1)
-            //    result = 0.01;
-            //else
-            //    result = 1;
 
             result = 1 / Math.Pow((Math.Cosh(value)), 2);
 

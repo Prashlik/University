@@ -13,6 +13,7 @@ namespace LabWork4
         bool is_teached = false;
         List<Element> testImages;
         Network nw;
+        int side;
 
         public Form1()
         {
@@ -23,6 +24,7 @@ namespace LabWork4
             ofd = new OpenFileDialog();
             nw = new Network();
             testImages = new List<Element>();
+            side = 8;
         }
 
         private void pictureButton1_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace LabWork4
 
         private void teachButton_Click(object sender, EventArgs e)
         {
-            int ra = 0, right, maxra = 0;
+            int ra = 0, right;
             double predict;
             int epoch = 0;
 
@@ -75,9 +77,8 @@ namespace LabWork4
                     return;
                 }
 
-            int pop;
-            nw.Init(3, new int[3] { 64, 20, 5 });
-            while (ra / 500 * 100 < 90)
+            nw.Init(3, new int[3] { side*side, 20, 5 });
+            while (ra != 5)
             {
                 ra = 0;
                 for (int i = 0; i < 5; i++)
@@ -93,7 +94,6 @@ namespace LabWork4
                     else
                         ra++;
                 }
-                if (maxra <= ra) { maxra = ra; pop = epoch;  }
                 epoch++;
                 if (epoch == 20)
                     break;
@@ -216,7 +216,7 @@ namespace LabWork4
             string name = Path.GetFileNameWithoutExtension(ofd.FileName);
             Image img = Image.FromFile(ofd.FileName);
 
-            if (img.Height != 8 || img.Width != 8)
+            if (img.Height != side || img.Width != side)
             {
                 MessageBox.Show("Неподходящий размер изображения!");
                 return false;
@@ -225,9 +225,9 @@ namespace LabWork4
             Bitmap bmp = Functions.ToBinary((Bitmap)img);
             ofd.FileName = null;
             Functions.PrintImage(bmp, pb);
-            for (int y = 0; y < 8; y++)
-                for (int x = 0; x < 8; x++)
-                    pictures[number].pixels[y * 8 + x] = bmp.GetPixel(x, y).GetBrightness();
+            for (int y = 0; y < side; y++)
+                for (int x = 0; x < side; x++)
+                    pictures[number].pixels[y * side + x] = bmp.GetPixel(x, y).GetBrightness();
             pictures[number].is_loaded = true;
             pictures[number].bmp = bmp;
             return true;
