@@ -1,3 +1,0 @@
-D:\МОЁ\3 семестр\Курсовой Проект\СourseProject\x64\Debug\СourseProject.exe
-D:\МОЁ\Универ\3 семестр\Курсовой Проект\СourseProject\x64\Debug\СourseProject.exe
-D:\МОЁ\University\3rd term\КПиЯП Курсовой проект\СourseProject\x64\Debug\СourseProject.exe
