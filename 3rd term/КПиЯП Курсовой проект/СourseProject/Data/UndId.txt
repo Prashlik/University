@@ -1,0 +1,7 @@
+
+    1     UStation_1
+    2     UStation_2
+    3     UStation_3
+    4     UStation_4
+    5Akademiya_Navuk
+    6Ploshcha_Kolasa

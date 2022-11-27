@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Company">
+    <Position X="17.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Company.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ground_Trans">
+    <Position X="12.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoAAIAwAAQAAEAAAAAAAACIAAAEAEQCAgATCAAEE=</HashCode>
+      <FileName>Ground_Trans.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Transport">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAQAAAABBAAAQIAAAAACQAAAAgAAAAAAA=</HashCode>
+      <FileName>Transport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Underground_Trans">
+    <Position X="16.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwACAAABAEAAAACAAAAAACAAUAAgABABAAE=</HashCode>
+      <FileName>Underground_Trans.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ground_Stops">
+    <Position X="21.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEADAAAAAiAAAAAAAAAAAAAAAABAAAAASAIgAAAAAAA=</HashCode>
+      <FileName>Ground_Stops.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stops">
+    <Position X="20.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAAAAAoAAAAAAAAABABABAAAAAAAAgQEIABAA=</HashCode>
+      <FileName>Stops.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Underground_Stops">
+    <Position X="18.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAAIAAAAAAAAAAABAAAAAAAAgAAAAEAA=</HashCode>
+      <FileName>Underground_Stops.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interface">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAyIEDAEAAAAqBAAAAQAiAAAAAAFAARAAAAQAA=</HashCode>
+      <FileName>Interface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Iterator&lt;T&gt;">
+    <Position X="9.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAACAAAAAAAAAAQAEAAQAAgAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Iterator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ring&lt;T&gt;">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQgAgAAACAAIAAAIAUmAEAAAAAAAAIAAAAAgA=</HashCode>
+      <FileName>Template.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkAAAAAAAAIQAAAAAAAAAAQgBiAEAAAQA=</HashCode>
+      <FileName>Time.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="File">
+    <Position X="24.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAAIAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAA=</HashCode>
+      <FileName>File.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Text_File&lt;T&gt;">
+    <Position X="24.25" Y="9.75" Width="1.5" />
+    <InheritanceLine Type="File">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="-0.009" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAJAAAAAAAAQAAAAAAAAAJAgAAAAAAAAEAAAAAEIAAA=</HashCode>
+      <FileName>Text_File.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exception">
+    <Position X="25.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAABAAABAAAAAACA=</HashCode>
+      <FileName>Exceptions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="File_Except">
+    <Position X="25.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAACAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>File_Except.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Input_Except">
+    <Position X="28" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Input_Except.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Search_Except">
+    <Position X="23.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAACAAAYAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Search_Except.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Nearest_St">
+    <Position X="9.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Structs.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="StopsInfo">
+    <Position X="26.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Structs.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Node&lt;T&gt;">
+    <Position X="7.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABAAAIAAAA=</HashCode>
+      <FileName>Iterator.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="errors">
+    <Position X="28.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEYAAAAAAAEQSABAABAADAAAAgAAAAAAAAoAA=</HashCode>
+      <FileName>Exceptions.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Keys">
+    <Position X="26.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAgAAAAAAAAQAAAICAAAgAAAAAABAAAA=</HashCode>
+      <FileName>Keys.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
