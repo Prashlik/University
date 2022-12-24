@@ -18,13 +18,13 @@ namespace LabWork4
         public Form1()
         {
             InitializeComponent();
+            side = 8;
             pictures = new data_info[6];
             for (int i = 0; i < pictures.Length; i++)
-                pictures[i] = new data_info();
+                pictures[i] = new data_info(side);
             ofd = new OpenFileDialog();
             nw = new Network();
             testImages = new List<Element>();
-            side = 8;
         }
 
         private void pictureButton1_Click(object sender, EventArgs e)

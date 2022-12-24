@@ -76,7 +76,7 @@ namespace LabWork2
 			for (; ; )
 			{
 				int chk = 0;
-				Bind(k, clusarr, sc, val); ;
+				Bind(k, clusarr, sc, val);
 				for (int j = 0; j < k; j++)
 					clusarr[j].SetCenter();
 				for (int p = 0; p < k; p++)

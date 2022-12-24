@@ -119,11 +119,19 @@ namespace LabWork2
         public static Bitmap ToBinary(Bitmap bmp)
         {
             Bitmap res = new Bitmap(bmp.Width, bmp.Height);
+            double max_brightness = 0;
+
+            for (int i = 0; i < bmp.Height; i++)
+                for (int j = 0; j < bmp.Width; j++)
+                    if (bmp.GetPixel(j, i).GetBrightness() > max_brightness)
+                        max_brightness = bmp.GetPixel(j, i).GetBrightness();
+
+
 
             for (int i = 0; i < bmp.Height; i++)
                 for (int j = 0; j < bmp.Width; j++)
                 {
-                    if (bmp.GetPixel(j, i).GetBrightness() * 100 < 50)
+                    if (bmp.GetPixel(j, i).GetBrightness() < (max_brightness / 2))
                         res.SetPixel(j, i, Color.Black);
                     else
                     {

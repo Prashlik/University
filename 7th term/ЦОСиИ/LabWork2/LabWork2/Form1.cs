@@ -74,7 +74,7 @@ namespace LabWork2
                 return;
             }
 
-            Bitmap resBmp = Functions.ToBinary(Functions.Filter((Bitmap)res));
+            Bitmap resBmp = Functions.Filter((Bitmap)res);
             List<Point> points = new List<Point>();
             for (int i = 0; i < resBmp.Width; i++)
                 for (int j = 0; j < resBmp.Height; j++)

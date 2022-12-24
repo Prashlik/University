@@ -54,25 +54,12 @@ namespace LabWork3
             Bitmap newBmp = new Bitmap(bmp);
             Random random = new Random();
 
-            if (percent == 100)
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    int h = i / width, w = i - h * width;
-                    if (bmp.GetPixel(w, h).GetBrightness() == 1)
-                        newBmp.SetPixel(w, h, Color.Black);
-                    else newBmp.SetPixel(w, h, Color.White);
-                }
-                return newBmp;
-            }
-            for (int i = 0; i < count; i++)
-            {
-                int temp = random.Next(area);
-                int h = temp / width, w = temp - h * width;
-                if (bmp.GetPixel(w, h).GetBrightness() == 1)
-                    newBmp.SetPixel(w, h, Color.Black);
-                else newBmp.SetPixel(w, h, Color.White);
-            }
+            for (int i = 0; i < bmp.Height; i++)
+                for (int j = 0; j < bmp.Width; j++)
+                    if (random.NextDouble() <= (double)percent / 100)
+                        if (bmp.GetPixel(j, i).GetBrightness() == 1)
+                            newBmp.SetPixel(j, i, Color.Black);
+                        else newBmp.SetPixel(j, i, Color.White);
 
             return newBmp;
         }

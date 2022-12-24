@@ -31,7 +31,7 @@ namespace LabWork3
             if (!addImage()) return;
             selectBasic.Items.Add(currentImage.Name);
             basicImages.Add(currentImage);
-
+            
             for (int i = 0; i <= 100; i += 10)
             {
                 testImages.Add(new Element(Functions.MakeRandomNoize((Bitmap)currentImage.Image, i), currentImage.Name + "_" + i.ToString() + "%"));
