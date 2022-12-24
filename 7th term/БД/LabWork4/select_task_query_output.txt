@@ -1,0 +1,199 @@
+1. Вывести данные о всех участниках всех музыкальных групп.
+
+SELECT * 
+	FROM member;
+
+ id | first_name |   middle_name   | last_name | gender | phone_number
+----+------------+-----------------+-----------+--------+--------------
+  1 | Alyona     | Dmitrievna      | Kovalova  | F      | 80445678925
+  2 | Evgeniy    | Konstantinovich | Belousov  | M      | 80445678926
+  3 | Arina      | Sergeevna       | Anokhina  | F      | 80445678927
+  4 | Denis      | Kirillovich     | Borisov   | O      | 80445678928
+  5 | Mikhail    | Borisovich      | Isaev     | M      | 80445678929
+  6 | Mikhail    | Grigorievich    | Gerasimov | M      | 80445678930
+  7 | Daniil     | Glebovich       | Makarov   | M      | 80445678931
+  8 | Konstantin | Zakharovich     | Fadeev    | M      | 80445678932
+(8 rows)
+
+2. Вывести фамилии и номера всех участников всех музыкальных групп.
+
+SELECT 
+	last_name AS "Surname",
+	phone_number AS "Phone" 
+FROM member;
+
+  Surname  |    Phone
+-----------+-------------
+ Kovalova  | 80445678925
+ Belousov  | 80445678926
+ Anokhina  | 80445678927
+ Borisov   | 80445678928
+ Isaev     | 80445678929
+ Gerasimov | 80445678930
+ Makarov   | 80445678931
+ Fadeev    | 80445678932
+(8 rows)
+
+3. Вывести список работников, фамилии отсортированы в алфавитном порядке.
+
+SELECT * 
+	FROM worker
+	ORDER BY last_name ASC;
+
+ id | first_name |  middle_name  |  last_name  |              speciality              | phone_number
+----+------------+---------------+-------------+--------------------------------------+--------------
+  2 | Ali        | Romanovich    | Belyaev     | Sound engineer                       | 80445678934
+  4 | Alisa      | Aleksandrovna | Mikhailova  | Sound engineer                       | 80445678936
+  6 | Aleksey    | Alievich      | Pastuhov    | Specialist in working with customers | 80445678938
+  8 | Vera       | Danielievna   | Pokrovskaya | Sound engineer                       | 80445678940
+  7 | Arseniy    | Bogdanovich   | Popov       | Sound engineer                       | 80445678939
+  5 | Evgeniya   | Alekseevna    | Safonova    | Vice Director                        | 80445678937
+  1 | Milana     | Zaharovna     | Sokolova    | Director                             | 80445678933
+  3 | Kirill     | Markovich     | Tumanov     | Administrator                        | 80445678935
+(8 rows)
+
+4. Вывести список всех должностей работников.
+
+SELECT DISTINCT speciality 
+	FROM worker 
+	ORDER BY speciality;
+
+              speciality
+--------------------------------------
+ Administrator
+ Director
+ Sound engineer
+ Specialist in working with customers
+ Vice Director
+(5 rows)
+
+5. Вывести список участников групп женского пола.
+
+SELECT * 
+	FROM member 
+	WHERE gender = 'F';
+
+ id | first_name | middle_name | last_name | gender | phone_number
+----+------------+-------------+-----------+--------+--------------
+  1 | Alyona     | Dmitrievna  | Kovalova  | F      | 80445678925
+  3 | Arina      | Sergeevna   | Anokhina  | F      | 80445678927
+(2 rows)
+
+6. Вывести список сессий звукозаписи, длительность которых меньше трёх часов,
+сессии были после 1-го сентября.
+
+SELECT * FROM recording_session 
+	   WHERE duration < 3  AND r_date > '2022-09-01';
+
+ id |   r_date   |  r_time  | duration |      session_type      |           link           | room_id | band_id
+----+------------+----------+----------+------------------------+--------------------------+---------+---------
+  2 | 2022-09-02 | 11:12:00 |        1 | Instrumental recording | https://123.com/instr1   |       6 |       1
+  3 | 2022-10-03 | 12:13:00 |      1.5 | Studio recording       | https://123.com/studio1  |       7 |       7
+  4 | 2022-10-04 | 13:14:00 |        2 | Concert recording      | https://123.com/concert1 |       8 |       2
+  5 | 2022-11-05 | 14:15:00 |      2.5 | Vocal recording        | https://123.com/voice2   |       8 |       6
+(4 rows)
+
+7. Вывести всю информацию о сессиях звукозаписи и группах, которые в них участвуют.
+
+SELECT 	   recording_session.id AS "Session ID",
+	   to_char(recording_session.r_date, 'DD Month YYYY') AS "Recording date", 
+	   r_time AS "Recording time",
+	   duration AS "Recording duration",
+	   session_type AS "Recording type",
+	   link AS "Link to record",
+	   band.id AS "Band ID",
+	   band.name AS "Band name",
+	   band.style AS "Band style"
+FROM recording_session
+JOIN band ON recording_session.band_id = band.id;
+
+ Session ID |  Recording date   | Recording time | Recording duration |     Recording type     |      Link to record      | Band ID |      Band name       |    Band style
+------------+-------------------+----------------+--------------------+------------------------+--------------------------+---------+----------------------+------------------
+          1 | 01 September 2022 | 10:11:00       |                0.5 | Vocal recording        | https://123.com/voice1   |       8 | Thor And The Cows    | Metal
+          2 | 02 September 2022 | 11:12:00       |                  1 | Instrumental recording | https://123.com/instr1   |       1 | The Cold Trees       | Doom metal
+          3 | 03 October   2022 | 12:13:00       |                1.5 | Studio recording       | https://123.com/studio1  |       7 | Beyond Anarchist     | Punk
+          4 | 04 October   2022 | 13:14:00       |                  2 | Concert recording      | https://123.com/concert1 |       2 | Cute Rabbit          | Soft rock
+          5 | 05 November  2022 | 14:15:00       |                2.5 | Vocal recording        | https://123.com/voice2   |       6 | Shadow Ray           | Rap
+          6 | 06 November  2022 | 15:16:00       |                  3 | Instrumental recording | https://123.com/instr2   |       3 | After Radical        | Alternative rock
+          7 | 07 December  2022 | 16:17:00       |                3.5 | Studio recording       | https://123.com/studio2  |       5 | Dear Kitties Are Old | Synth pop
+          8 | 08 December  2022 | 17:18:00       |                  4 | Concert recording      | https://123.com/concert2 |       4 | Elegant Prince       | Pop
+(8 rows)
+
+8. Вывести участников групп, телефонные номера которых содержат в себе "892".
+
+SELECT * 
+	FROM member 
+	WHERE phone_number LIKE '%892%';
+
+
+ id | first_name |   middle_name   | last_name | gender | phone_number
+----+------------+-----------------+-----------+--------+--------------
+  1 | Alyona     | Dmitrievna      | Kovalova  | F      | 80445678925
+  2 | Evgeniy    | Konstantinovich | Belousov  | M      | 80445678926
+  3 | Arina      | Sergeevna       | Anokhina  | F      | 80445678927
+  4 | Denis      | Kirillovich     | Borisov   | O      | 80445678928
+  5 | Mikhail    | Borisovich      | Isaev     | M      | 80445678929
+(5 rows)
+
+9. Вывести тип сессии звукозаписи, группу и помещение, в котором оно проходит, при условии,
+что группа играет в стиле рок.
+
+SELECT 	   recording_session.id AS "Session ID",
+	   recording_session.session_type AS "Recording type",
+	   band.id AS "Band ID",
+	   band.name AS "Band name",
+	   band.style AS "Band style",
+	   room.id AS "Room ID",
+	   room.room_number AS "Room number"
+FROM recording_session
+JOIN room ON recording_session.room_id = room.id
+JOIN band ON recording_session.band_id = band.id
+WHERE band.style LIKE '%rock%';
+
+ Session ID |     Recording type     | Band ID |   Band name   |    Band style    | Room ID | Room number
+------------+------------------------+---------+---------------+------------------+---------+-------------
+          4 | Concert recording      |       2 | Cute Rabbit   | Soft rock        |       8 |          24
+          6 | Instrumental recording |       3 | After Radical | Alternative rock |       7 |          23
+(2 rows)
+
+10. Вывести количество знаков в графе номер телефона у работников.
+
+SELECT phone_number,
+	LENGTH(phone_number)
+	FROM worker;
+
+ phone_number | length
+--------------+--------
+ 80445678933  |     11
+ 80445678934  |     11
+ 80445678935  |     11
+ 80445678936  |     11
+ 80445678937  |     11
+ 80445678938  |     11
+ 80445678939  |     11
+ 80445678940  |     11
+(8 rows)
+
+11. Вывести информацию о участниках группы и ролях в группе.
+
+SELECT     member.first_name AS "First name",
+	   member.middle_name AS "Middle name",
+	   member.last_name AS "Last name",
+	   member.phone_number AS "Phone number",
+	   role.activity_kind AS "Kind of activity",
+	   role.experience AS "Experience"
+FROM member_role
+JOIN member ON member_role.member_id = member.id
+JOIN role ON member_role.role_id = role.id;
+
+ First name |   Middle name   | Last name | Phone number | Kind of activity | Experience
+------------+-----------------+-----------+--------------+------------------+------------
+ Alyona     | Dmitrievna      | Kovalova  | 80445678925  | back singer      |          2
+ Evgeniy    | Konstantinovich | Belousov  | 80445678926  | bass player      |          2
+ Arina      | Sergeevna       | Anokhina  | 80445678927  | solo guitarist   |          1
+ Denis      | Kirillovich     | Borisov   | 80445678928  | keyboard player  |        1.2
+ Mikhail    | Borisovich      | Isaev     | 80445678929  | drummer          |          1
+ Mikhail    | Grigorievich    | Gerasimov | 80445678930  | rythm gyitatist  |        2.5
+ Daniil     | Glebovich       | Makarov   | 80445678931  | drummer          |          5
+ Konstantin | Zakharovich     | Fadeev    | 80445678932  | lead singer      |          3
+(8 rows)

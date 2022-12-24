@@ -1,0 +1,180 @@
+1. Вывести подсчитанное количество кабинетов разного типа.
+
+WITH room_count AS (
+SELECT purpose AS "Room purpose", 
+	   COUNT(*) AS "Rooms"
+FROM room
+GROUP BY purpose
+ORDER BY purpose
+)
+
+SELECT * from room_count;
+
+ Room purpose  | Rooms
+---------------+-------
+ Director room |     1
+ Engineer room |     1
+ Other         |     1
+ Stock room    |     1
+ Studio room   |     4
+(5 rows)
+
+2. Вывести статистику времени сессии записи звука:
+   максимальное и среднее время сессии.
+
+SELECT MAX(duration) AS "Maximum time",
+	   TRUNC(AVG(duration)) AS "Average time"
+FROM recording_session;
+
+ Maximum time | Average time
+--------------+--------------
+            4 |            2
+(1 row)
+
+3. Вывести члена группы с максимальным опытом, его стаж и роль в группе.
+
+SELECT member.last_name AS "Surname",
+	   role.experience AS "Experience",
+	   role.activity_kind AS "Kind of activity"
+FROM member_role
+JOIN role ON member_role.role_id = role.id
+JOIN member ON member_role.member_id = member.id
+WHERE role.experience = (SELECT MAX(role.experience) 
+						 FROM role);
+ Surname | Experience | Kind of activity
+---------+------------+------------------
+ Makarov |          5 | drummer
+(1 row)
+
+4. Вывести идентификаторы сессий записи, их дата и время
+   длительность сессии меньше среднего.
+
+SELECT recording_session.id AS "Session ID",
+	   recording_session.r_date AS "Date",
+	   recording_session.r_time AS "Time",
+	   recording_session.duration AS "Duration"
+FROM recording_session
+WHERE duration < (SELECT AVG(duration) FROM recording_session)
+ORDER BY duration DESC;
+
+ Session ID |    Date    |   Time   | Duration
+------------+------------+----------+----------
+          4 | 2022-10-04 | 13:14:00 |        2
+          3 | 2022-10-03 | 12:13:00 |      1.5
+          2 | 2022-09-02 | 11:12:00 |        1
+          1 | 2022-09-01 | 10:11:00 |      0.5
+(4 rows)
+
+5. Вывести фамилии и имена работников с должностью "звукорежиссёр".
+
+SELECT worker.id AS "Worker ID",
+	   worker.first_name AS "Name",
+	   worker.last_name AS "Surname",
+	   worker.speciality AS "Speciality"
+	   FROM worker
+	   WHERE speciality = 'Sound engineer';
+
+ Worker ID |  Name   |   Surname   |   Speciality
+-----------+---------+-------------+----------------
+         2 | Ali     | Belyaev     | Sound engineer
+         4 | Alisa   | Mikhailova  | Sound engineer
+         7 | Arseniy | Popov       | Sound engineer
+         8 | Vera    | Pokrovskaya | Sound engineer
+(4 rows)
+
+6. Вывести информацию о всех сеансах звукозаписи,
+    в которых участвовали работники, имеющие должность «Звукорежиссёр».
+
+WITH session_info AS (
+SELECT recording_session.id AS "Session ID",
+	   recording_session.duration AS "Duration",
+	   recording_session.session_type AS "Type",
+	   worker.last_name AS "Surname",
+	   worker.speciality AS "Speciality"
+FROM worker_session
+JOIN worker ON worker_session.worker_id = worker.id
+JOIN recording_session ON worker_session.session_id = recording_session.id
+WHERE worker.id IN (SELECT worker.id
+			    	FROM worker
+				WHERE speciality = 'Sound engineer')
+)
+
+SELECT * FROM session_info;
+
+ Session ID | Duration |       Type        |   Surname   |   Speciality
+------------+----------+-------------------+-------------+----------------
+          1 |      0.5 | Vocal recording   | Belyaev     | Sound engineer
+          7 |      3.5 | Studio recording  | Mikhailova  | Sound engineer
+          4 |        2 | Concert recording | Popov       | Sound engineer
+          5 |      2.5 | Vocal recording   | Pokrovskaya | Sound engineer
+(4 rows)
+
+7. Вывести полный список фамилий всех людей,
+    относящихся к студии звукозаписи (и работников, и участников групп).						 
+
+SELECT last_name AS list_of_people 
+		FROM member
+	UNION
+SELECT last_name AS list_of_people 
+		FROM worker
+ORDER BY list_of_people ASC;
+
+ list_of_people
+----------------
+ Anokhina
+ Belousov
+ Belyaev
+ Borisov
+ Fadeev
+ Gerasimov
+ Isaev
+ Kovalova
+ Makarov
+ Mikhailova
+ Pastuhov
+ Pokrovskaya
+ Popov
+ Safonova
+ Sokolova
+ Tumanov
+(16 rows)
+
+8. Найти общую последовательность символов в именах работников и членов групп.
+    Вывести идентификаторы таких совпадений.
+
+SELECT id AS intersected_id
+		FROM worker 
+		WHERE last_name LIKE '%ov%'
+	INTERSECT
+SELECT id AS intersected_id
+		FROM member
+		WHERE last_name LIKE '%ov%'
+ORDER BY intersected_id ASC;
+
+ intersected_id
+----------------
+              1
+              4
+              6
+              7
+(4 rows)
+
+9. Вывести только те идентификаторы работников,
+    чьи имена содержат последовательность символов,
+    не совпадающую с той же последовательностью символов в соответствующих именах членов групп.
+
+SELECT id AS worker_id 
+		FROM worker
+		WHERE last_name LIKE '%ov%'
+	EXCEPT
+SELECT id AS worker_id 
+		FROM member
+		WHERE last_name LIKE '%ov%'
+ORDER BY worker_id ASC;
+
+ worker_id
+-----------
+         3
+         5
+         8
+(3 rows)

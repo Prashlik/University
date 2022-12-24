@@ -1,0 +1,106 @@
+1. Вывести подсчитанное количество кабинетов разного типа.
+
+SELECT * from room_count;
+
+ Room purpose  | Rooms
+---------------+-------
+ Director room |     1
+ Engineer room |     1
+ Other         |     1
+ Stock room    |     1
+ Studio room   |     4
+(5 rows)
+
+2. Вывести статистику времени сессии записи звука:
+   максимальное и среднее время сессии.
+
+ Maximum time | Average time
+--------------+--------------
+            4 |            2
+(1 row)
+
+3. Вывести члена группы с максимальным опытом, его стаж и роль в группе.
+
+ Surname | Experience | Kind of activity
+---------+------------+------------------
+ Makarov |          5 | drummer
+(1 row)
+
+4. Вывести идентификаторы сессий записи, их дата и время
+   длительность сессии меньше среднего.
+
+ Session ID |    Date    |   Time   | Duration
+------------+------------+----------+----------
+          4 | 2022-10-04 | 13:14:00 |        2
+          3 | 2022-10-03 | 12:13:00 |      1.5
+          2 | 2022-09-02 | 11:12:00 |        1
+          1 | 2022-09-01 | 10:11:00 |      0.5
+(4 rows)
+
+5. Вывести фамилии и имена работников с должностью "звукорежиссёр".
+
+ Worker ID |  Name   |   Surname   |   Speciality
+-----------+---------+-------------+----------------
+         2 | Ali     | Belyaev     | Sound engineer
+         4 | Alisa   | Mikhailova  | Sound engineer
+         7 | Arseniy | Popov       | Sound engineer
+         8 | Vera    | Pokrovskaya | Sound engineer
+(4 rows)
+
+6. Вывести информацию о всех сеансах звукозаписи,
+    в которых участвовали работники, имеющие должность «Звукорежиссёр».
+
+SELECT * FROM session_info;
+
+ Session ID | Duration |       Type        |   Surname   |   Speciality
+------------+----------+-------------------+-------------+----------------
+          1 |      0.5 | Vocal recording   | Belyaev     | Sound engineer
+          7 |      3.5 | Studio recording  | Mikhailova  | Sound engineer
+          4 |        2 | Concert recording | Popov       | Sound engineer
+          5 |      2.5 | Vocal recording   | Pokrovskaya | Sound engineer
+(4 rows)
+
+7. Вывести полный список фамилий всех людей,
+    относящихся к студии звукозаписи (и работников, и участников групп).						 
+
+ list_of_people
+----------------
+ Anokhina
+ Belousov
+ Belyaev
+ Borisov
+ Fadeev
+ Gerasimov
+ Isaev
+ Kovalova
+ Makarov
+ Mikhailova
+ Pastuhov
+ Pokrovskaya
+ Popov
+ Safonova
+ Sokolova
+ Tumanov
+(16 rows)
+
+8. Найти общую последовательность символов в именах работников и членов групп.
+    Вывести идентификаторы таких совпадений.
+
+ intersected_id
+----------------
+              1
+              4
+              6
+              7
+(4 rows)
+
+9. Вывести только те идентификаторы работников, чьи имена содержат последовательность 
+   символов, не совпадающую с той же последовательностью символов в 
+   соответствующих именах членов групп.
+
+ worker_id
+-----------
+         3
+         5
+         8
+(3 rows)
